@@ -50,3 +50,28 @@ historyList.addEventListener("click", function (event) {
     renderSearchHistory();
   }
 });
+// Function to fetch weather data from the OpenWeatherMap API
+function getWeather(cityName) {
+  const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&appid=${apiKey}`;
+
+  // Make API request
+  fetch(apiUrl)
+    .then((response) => response.json())
+    .then((data) => {
+      // Process and display current weather
+      displayCurrentWeather(data);
+
+      // Fetch and display 5-day forecast
+      return fetch(
+        `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&units=metric&appid=${apiKey}`
+      );
+    })
+    .then((response) => response.json())
+    .then((data) => {
+      // Process and display 5-day forecast
+      displayFiveDayForecast(data);
+    })
+    .catch((error) => {
+      console.error("Error fetching weather data:", error);
+    });
+}

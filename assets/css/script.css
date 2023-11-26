@@ -5,38 +5,58 @@ body {
     padding: 0; 
   }
 /* for heading weather dashboard */
-  .weather-header {
+/* Set weather header styles */
+.weather-header {
+    /* Set header background color */
     background-color: #4917ac;
+    /* Align text to center */
     text-align: center;
+    /* Set header text color */
     color: #efe9e9;
+    /* Set header width to 100% */
     width: 100%;
+    /* Set header height to 50px */
     height: 50px;
+    /* Set header position to sticky */
     position: sticky;
+    /* Set header to stick at the top */
     top: 0;
-  }
-
+}
 /* for horizontal line */
-  .weather-hr{
+.weather-hr{
+    /* set width and center */
     width: 85%;
     margin: 0px 0px;
+    /* set margin-top and margin-bottom */
     margin-top: 20px;
     margin-bottom: 20px;
-  }
+ }
   /* for buttons to display vertically */
-.list-group-item-action{
-  display: block;
-  margin-top: 10px;
-  width: 200px;
-  background-color: gray;
-  border-radius: 3px;
-}
-/* for search button */
-#search-button,.history{
+.list-group-item-action {
+    /* Set display as block */
+    display: block;
+   
+    /* Add margin top of 10px */
     margin-top: 10px;
-    background-color: rgb(20, 152, 234);
+   
+    /* Set width to 200px */
     width: 200px;
+   
+    /* Set background color to gray */
+    background-color: gray;
+   
+    /* Add border radius of 3px */
     border-radius: 3px;
-  }
+   }
+/* for search button */
+/* search button style */
+#search-button,
+.history {
+ margin-top: 10px; /* vertical space */
+ background-color: rgb(20, 152, 234); /* button color */
+ width: 200px; /* button width */
+ border-radius: 3px; /* rounded corners */
+}
   /* for button below search for a city */
   #search-input{
     width: 194.5px;
@@ -93,14 +113,17 @@ body {
   
   /* Clearing floats after forecast cards */
   #forecast::after {
+    /* Creates an empty element with no height */
     content: "";
+    /* Displays the element as a table */
     display: table !important;
+    /* Clears the element to the right of any floated elements */
     clear: both;
-  }
+   }
   
   .hidden {
-    display: none !important; 
-    margin:0 !important; 
-    border: 0 !important; 
-    padding: 0 !important; 
-  }
+    display: none !important; /* hide the element */
+    margin:0 !important; /* remove margins */
+    border: 0 !important; /* remove borders */
+    padding: 0 !important; /* remove padding */
+   }

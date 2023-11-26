@@ -99,3 +99,31 @@ function displayCurrentWeather(data) {
 
   todaySection.innerHTML = currentWeatherHTML;
 }
+
+// Function to display 5-day forecast
+function displayFiveDayForecast(data) {
+  forecastSection.innerHTML = ""; // Clear previous content
+  forecastSection.classList.remove("hidden");
+  const forecastList = data.list;
+  for (let i = 4; i < forecastList.length; i += 8) {
+    const forecastData = forecastList[i];
+    const date = new Date(forecastData.dt * 1000);
+    const temperature = forecastData.main.temp;
+    const humidity = forecastData.main.humidity;
+    const weatherIcon = forecastData.weather[0].icon;
+
+    // Create and append HTML elements for each forecast day
+    const forecastHTML = `
+          <div class="col-md-2 new">
+            <p>Date: ${dayjs(date).format("MM/DD/YYYY")}</p>
+            <img src="https://openweathermap.org/img/wn/${weatherIcon}.png" alt="${
+      forecastData.weather[0].description
+    }">
+            <p>Temperature: ${temperature} &#176;C</p>
+            <p>Humidity: ${humidity}%</p>
+          </div>
+        `;
+
+    forecastSection.innerHTML += forecastHTML;
+  }
+}

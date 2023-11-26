@@ -75,3 +75,27 @@ function getWeather(cityName) {
       console.error("Error fetching weather data:", error);
     });
 }
+// Function to display current weather
+function displayCurrentWeather(data) {
+  todaySection.innerHTML = ""; // Clear previous content
+  todaySection.classList.remove("hidden");
+  const cityName = data.name;
+  const date = new Date(data.dt * 1000);
+  const temperature = data.main.temp;
+  const humidity = data.main.humidity;
+  const windSpeed = data.wind.speed;
+  const weatherIcon = data.weather[0].icon;
+
+  // Create and append HTML elements
+  const currentWeatherHTML = `
+        <h2>${cityName} (${dayjs(date).format("MM/DD/YYYY")})</h2>
+        <img src="https://openweathermap.org/img/wn/${weatherIcon}.png" alt="${
+    data.weather[0].description
+  }">
+        <p>Temperature: ${temperature} &#176;C</p>
+        <p>Humidity: ${humidity}%</p>
+        <p>Wind Speed: ${windSpeed} m/s</p>
+      `;
+
+  todaySection.innerHTML = currentWeatherHTML;
+}

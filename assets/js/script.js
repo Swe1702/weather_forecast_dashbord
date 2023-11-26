@@ -29,7 +29,7 @@ function initPage() {
         renderSearchHistory();
       }
     });
-}
+
 // Event listener for history item click
 historyList.addEventListener("click", function (event) {
   if (event.target.classList.contains("history")) {
@@ -127,3 +127,28 @@ function displayFiveDayForecast(data) {
     forecastSection.innerHTML += forecastHTML;
   }
 }
+  // Function to render search history
+  function renderSearchHistory() {
+    historyList.innerHTML = ""; // Clear previous content
+
+    for (let i = 0; i < searchHistory.length; i++) {
+      const historyItem = document.createElement("button");
+      historyItem.classList.add(
+        "list-group-item",
+        "list-group-item-action",
+        "history"
+      );
+      historyItem.innerText = searchHistory[i];
+      historyList.appendChild(historyItem);
+    }
+    const clearitems = document.createElement("button");
+    clearitems.innerText = "clear";
+    historyList.appendChild(clearitems);
+  }
+
+  // Initial rendering of search history
+  renderSearchHistory();
+}
+
+// Initialize the page
+initPage();

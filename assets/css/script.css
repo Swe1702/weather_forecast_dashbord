@@ -30,3 +30,77 @@ body {
   background-color: gray;
   border-radius: 3px;
 }
+/* for search button */
+#search-button,.history{
+    margin-top: 10px;
+    background-color: rgb(20, 152, 234);
+    width: 200px;
+    border-radius: 3px;
+  }
+  /* for button below search for a city */
+  #search-input{
+    width: 194.5px;
+    border-radius: 3px;
+  }
+  /* for left content to be left */
+  aside{
+    width: 230px;
+  }
+  /* for side by side display */
+  #today h2,p{
+    padding-left: 10px;
+  }
+  #today h2{
+    display: inline-block;
+    margin: 0px;
+  }
+  #today img{
+    position: relative;
+    top: 15px;
+  }
+  
+  #forecast h2{
+    display: block;
+  }
+  
+  .weather-search {
+    width: calc(100% - 110px); /* Adjust the input width */
+  }
+  
+  /* Removing positioning and adjusting width for today and forecast sections */
+  #today,
+  #forecast {
+    width: 100%; /* Set width to 100% */
+    margin:20px; /* Add margin-top for better spacing */
+    border: 2px solid black;
+    background-color: #e4e2e7;
+    padding: 20px; /* Add padding for content inside */
+    box-sizing: border-box; /* Ensure padding doesn't affect width */
+    overflow: hidden; /* Hide overflow content */
+  }
+  
+  /* Adjusting forecast cards */
+  .new {
+    display: block;
+    color: white;
+    padding: 20px; /* Adjust padding */
+    background-color: rgb(10, 72, 72);
+    margin-top: 10px;
+    width: calc(20% - 20px); /* Adjust card width */
+    margin-right: 20px; /* Add margin-right for spacing */
+    float: left; /* Float cards left for side-by-side display */
+  }
+  
+  /* Clearing floats after forecast cards */
+  #forecast::after {
+    content: "";
+    display: table !important;
+    clear: both;
+  }
+  
+  .hidden {
+    display: none !important; 
+    margin:0 !important; 
+    border: 0 !important; 
+    padding: 0 !important; 
+  }

@@ -11,7 +11,7 @@ function initPage() {
   forecastSection.classList.add("hidden");
   searchForm.reset();
 
-  const apiKey = "add your API key"; // Replace with your OpenWeatherMap API key
+  const apiKey = "da7be031a2610a92bdf6a6ffbcd075ef"; // Replace with your OpenWeatherMap API key
   document
     .getElementById("search-form")
     .addEventListener("submit", function (event) {

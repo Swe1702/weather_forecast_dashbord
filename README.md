@@ -55,3 +55,4 @@ OUTPUT:
 
 GITHUB LINK: https://github.com/Swe1702/weather_forecast_dashbord
 DEPLOYED LINK: https://swe1702.github.io/weather_forecast_dashbord/
+video : ![Alt text](<Weather Dashboard.gif>)
